@@ -2,6 +2,7 @@
 
 提供两个及其简单的功能, 来查阅当前最新一期或指定具体某一期的文章列表.
 
+![湾区日报 alfred workflow](https://raw.githubusercontent.com/yPangXie/wanqu-workflow/master/screenshot/wanqu-screenshot.png)
 
 ## 使用方法
 
