@@ -16,9 +16,9 @@
 
 ## 使用方法
 
- - 下载`湾区日报.alfredworkflow`
+ - 直接现在文件中的`wanqu.alfredworkflow` 或者从`Packal`下载:[湾区日报](http://www.packal.org/workflow/wan-qu-ri-bao)
  - 依次打开`Alfred`, `Preferences`, `Workflows`
- - 将`湾区日报.alfredworkflow`拖拽进去即可
+ - 将`wanqu.alfredworkflow`拖拽进去即可
 
 ```bash
 # 获取最新一期的数据
