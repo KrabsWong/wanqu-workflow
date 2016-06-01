@@ -1,5 +1,15 @@
 # 湾区日报 alfred workflow
 
+## 写在前面说明
+
+这是一个非官方的插件, 方便自己使用, 顺便练练手.
+
+官方网站: [https://wanqu.co](https://wanqu.co)
+
+官方app: [https://itunes.apple.com/app/apple-store/id995762924](https://itunes.apple.com/app/apple-store/id995762924)
+
+## 介绍
+
 提供两个及其简单的功能, 来查阅当前最新一期或指定具体某一期的文章列表.
 
 ![湾区日报 alfred workflow](https://raw.githubusercontent.com/yPangXie/wanqu-workflow/master/screenshot/wanqu-screenshot.png)
