@@ -8,6 +8,8 @@
 
 官方app: [https://itunes.apple.com/app/apple-store/id995762924](https://itunes.apple.com/app/apple-store/id995762924)
 
+**在Alfred3上开发, 不向下兼容..**
+
 ## 介绍
 
 提供两个及其简单的功能, 来查阅当前最新一期或指定具体某一期的文章列表.
