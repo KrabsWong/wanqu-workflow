@@ -18,7 +18,7 @@
 
 ## 使用方法
 
- - 直接现在文件中的`wanqu.alfredworkflow` 或者从`Packal`下载:[湾区日报](http://www.packal.org/workflow/wan-qu-ri-bao)
+ - 直接现在文件中的`wanqu.alfredworkflow` 或者从`Packal`下载:[湾区日报](http://www.packal.org/workflow/wan-qu-ri-bao-fei-guan-fang)
  - 依次打开`Alfred`, `Preferences`, `Workflows`
  - 将`wanqu.alfredworkflow`拖拽进去即可
 
