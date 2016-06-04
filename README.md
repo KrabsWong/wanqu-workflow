@@ -8,7 +8,8 @@
 
 官方app: [https://itunes.apple.com/app/apple-store/id995762924](https://itunes.apple.com/app/apple-store/id995762924)
 
-**在Alfred3上开发, 不向下兼容..**
+~~在Alfred3上开发, 不向下兼容..~~
+支持Alfred2+
 
 ## 介绍
 
