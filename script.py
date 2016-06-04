@@ -1,34 +1,30 @@
-import re
+# -*- coding: utf_8 -*-
+
 import urllib2
 import urllib
 import json
 
-issue = "{query}"
-if issue == 'l':
-	params = {"type": "wanqu", "action": "getLatest"}
-else:
-	params = {"type": "wanqu", "action": "getSpec", "issue": issue}
+def queryData(query):
+    issue = query
+    if issue == 'l':
+        params = {"type": "wanqu", "action": "getLatest"}
+    else:
+        params = {"type": "wanqu", "action": "getSpec", "issue": issue}
 
-data = urllib.urlencode(params)
-req = urllib2.Request('http://bigyoo.me/ns/cmd', data)
-res = urllib2.urlopen(req)
-result = res.read()
+    data = urllib.urlencode(params)
+    req = urllib2.Request('http://bigyoo.me/ns/cmd', data)
+    res = urllib2.urlopen(req)
+    result = res.read()
 
-resultDictData = json.loads(result)
-issueTitle = resultDictData['data']['title']
+    resultDictData = json.loads(result)
+    issueTitle = resultDictData['data']['title']
 
-alfredData = {"items": []}
-for item in resultDictData['data']['list']:
-    data = {
-        "title": item['title'],
-        "subtitle": '['+ issueTitle +'] ' + item['summary'],
-        "arg": urllib.unquote(item['link'].decode('utf-8').encode('gb18030')),
-        "icon": {
-            "path": "icon.png"
-        }
-    }
+    xmlString = '<items>'
+    for item in resultDictData['data']['list']:
+        xmlString += '<item arg="'+ item['link'] +'" valid="YES">'
+        xmlString += '<title>'+ item['title'] +'</title>'
+        xmlString += '<subtitle>['+ issueTitle +'] ' + item['summary'] +'</subtitle>'
+        xmlString += '<icon>icon.png</icon></item>'
 
-    alfredData['items'].append(data.copy())
-
-jsonData = json.dumps(alfredData)
-print jsonData
+    xmlString += '</items>'
+    print xmlString
