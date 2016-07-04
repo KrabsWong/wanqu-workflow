@@ -8,6 +8,8 @@ def queryData(query):
     issue = query
     if issue == 'l':
         params = {"type": "wanqu", "action": "getLatest"}
+    elif issue == 'r':
+        params = {"type": "wanqu", "action": "getRandom"}
     else:
         params = {"type": "wanqu", "action": "getSpec", "issue": issue}
 
