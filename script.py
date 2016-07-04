@@ -23,6 +23,10 @@ def queryData(query):
 
     xmlString = '<items>'
     for item in resultDictData['data']['list']:
+        # 向上兼容新的数据结构(期数存储到每一条数据中)
+        if 'date' in item:
+            issueTitle = item['date']
+
         xmlString += '<item arg="'+ item['link'] +'" valid="YES">'
         xmlString += '<title>'+ item['title'] +'</title>'
         xmlString += '<subtitle>['+ issueTitle +'] ' + item['summary'] +'</subtitle>'
