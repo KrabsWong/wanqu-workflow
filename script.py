@@ -3,6 +3,7 @@
 import urllib2
 import urllib
 import json
+import re
 
 def queryData(query):
     issue = query
@@ -10,8 +11,10 @@ def queryData(query):
         params = {"type": "wanqu", "action": "getLatest"}
     elif issue == 'r':
         params = {"type": "wanqu", "action": "getRandom"}
-    else:
+    elif re.match(r'\d', issue, re.I):
         params = {"type": "wanqu", "action": "getSpec", "issue": issue}
+    else:
+        print "<items><item><title>输入的什么玩意?..</title><subtitle>正确的输入内容是字母l, 或者字母r, 或者数字</subtitle><icon>icon.png</icon></item></items>"
 
     data = urllib.urlencode(params)
     req = urllib2.Request('http://bigyoo.me/ns/cmd', data)
@@ -23,7 +26,6 @@ def queryData(query):
 
     xmlString = '<items>'
     for item in resultDictData['data']['list']:
-        # 向上兼容新的数据结构(期数存储到每一条数据中)
         if 'date' in item:
             issueTitle = item['date']
 
