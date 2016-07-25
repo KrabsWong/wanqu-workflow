@@ -11,7 +11,7 @@ def queryData(query):
         params = {"type": "wanqu", "action": "getLatest"}
     elif issue == 'r':
         params = {"type": "wanqu", "action": "getRandom"}
-    elif re.match(r'\d', issue, re.I):
+    elif re.match(r'^\d$', issue, re.I):
         params = {"type": "wanqu", "action": "getSpec", "issue": issue}
     else:
         print "<items><item><title>输入的什么玩意?..</title><subtitle>正确的输入内容是字母l, 或者字母r, 或者数字</subtitle><icon>icon.png</icon></item></items>"
