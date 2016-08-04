@@ -17,7 +17,7 @@ def queryData(query):
             params = {"type": "wanqu", "action": "getRandom", "count": matchedData.group(1)}
         else:
             print "<items><item><title>输入的什么玩意?..</title><subtitle>正确的输入内容是字母l, 或者字母r, 或者r1类型的字母数字组合, 或者数字</subtitle><icon>icon.png</icon></item></items>"
-    elif re.match(r'^\d$', issue, re.I):
+    elif re.match(r'^\d.*$', issue, re.I):
         params = {"type": "wanqu", "action": "getSpec", "issue": issue}
     else:
         print "<items><item><title>输入的什么玩意?..</title><subtitle>正确的输入内容是字母l, 或者字母r, 或者r1类型的字母数字组合, 或者数字</subtitle><icon>icon.png</icon></item></items>"
