@@ -40,6 +40,12 @@ wq 100
 
 ## 更新日志
 
+**v5.0.0 (2016/08/27)**
+
+ - feat: 新增版本检测及消息推送功能
+ - refactor: 调整icon图标(新增图标引用自[https://www.iconfinder.com/iconsets/UltraBuuf](https://www.iconfinder.com/iconsets/UltraBuuf) "Free for personal use only")
+ - refactor: 存量安装兼容处理
+
 **v4.2.1 (2016/08/04)**
 
  - fix: 正则错误, 导致指定期数的时候, 超过1位的数字识别错误.. (🌚太TM 2B了..
