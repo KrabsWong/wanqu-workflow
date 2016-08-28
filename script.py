@@ -5,6 +5,7 @@ import urllib
 import json
 import re
 import os
+from uuid import getnode as get_mac
 
 DOWNLOAD_URL = 'http://www.packal.org/workflow/wan-qu-ri-bao-fei-guan-fang'
 REQUEST_URL = 'http://ns.bigyoo.me/cmd'
@@ -12,21 +13,23 @@ REQUEST_URL = 'http://ns.bigyoo.me/cmd'
 def queryData(query):
     # 检测全局变量的版本信息
     clientVersion = os.environ.get('alfred_wanqu_version')
+    # 获取当前用户的`mac`地址信息
+    macAddress = get_mac()
 
     # 根据用户输入, 构造不同的数据请求
     issue = query
     if issue == 'l':
-        params = {"type": "wanqu", "action": "getLatest", "clientVersion": clientVersion}
+        params = {"type": "wanqu", "action": "getLatest", "clientVersion": clientVersion, "macAddress": macAddress}
     elif re.match(r'^r(\d+)?$', issue, re.I):
         matchedData = re.match(r'^r(\d+)?$', issue, re.I)
         if issue == 'r':
-            params = {"type": "wanqu", "action": "getRandom", "clientVersion": clientVersion}
+            params = {"type": "wanqu", "action": "getRandom", "clientVersion": clientVersion, "macAddress": macAddress}
         elif matchedData.group(1):
-            params = {"type": "wanqu", "action": "getRandom", "count": matchedData.group(1), "clientVersion": clientVersion}
+            params = {"type": "wanqu", "action": "getRandom", "count": matchedData.group(1), "clientVersion": clientVersion, "macAddress": macAddress}
         else:
             print "<items><item><title>输入的什么玩意?..</title><subtitle>正确的输入内容是字母l, 或者字母r, 或者r1类型的字母数字组合, 或者数字</subtitle><icon>icon.png</icon></item></items>"
     elif re.match(r'^\d.*$', issue, re.I):
-        params = {"type": "wanqu", "action": "getSpec", "issue": issue, "clientVersion": clientVersion}
+        params = {"type": "wanqu", "action": "getSpec", "issue": issue, "clientVersion": clientVersion, "macAddress": macAddress}
     else:
         print "<items><item><title>输入的什么玩意?..</title><subtitle>正确的输入内容是字母l, 或者字母r, 或者r1类型的字母数字组合, 或者数字</subtitle><icon>icon.png</icon></item></items>"
 
